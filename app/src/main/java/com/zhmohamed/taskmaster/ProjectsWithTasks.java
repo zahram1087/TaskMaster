@@ -1,10 +1,10 @@
 package com.zhmohamed.taskmaster;
 
-import android.arch.persistence.room.Embedded;
-import android.arch.persistence.room.Relation;
+import androidx.room.Embedded;
+import androidx.room.Relation;
 
-import com.zhmohamed.taskmaster.Project.Project;
-import com.zhmohamed.taskmaster.Task.Task;
+import com.zhmohamed.taskmaster.entities.Project;
+import com.zhmohamed.taskmaster.entities.Task;
 
 import java.util.List;
 

@@ -1,18 +1,14 @@
-package com.zhmohamed.taskmaster.Project;
+package com.zhmohamed.taskmaster.entities;
 
-import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.PrimaryKey;
-
-import com.zhmohamed.taskmaster.Task.Task;
-
-import java.util.List;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
 @Entity
 public class Project {
     ////source: https://developer.android.com/training/data-storage/room/defining-data
 
     @PrimaryKey(autoGenerate = true)
-    public long id;
+    public long projectId;
 
     public String title;
     public String description;
@@ -31,7 +27,5 @@ public class Project {
         return this.title + ": " + this.description;
     }
 
-    //oneproject many task
-    //oneToMany
-    //ManytoOne
+
 }

@@ -1,11 +1,11 @@
-package com.zhmohamed.taskmaster.Project;
+package com.zhmohamed.taskmaster.Doas;
 
-import android.arch.persistence.room.Dao;
-import android.arch.persistence.room.Delete;
-import android.arch.persistence.room.Insert;
-import android.arch.persistence.room.Query;
+import androidx.room.Dao;
+import androidx.room.Delete;
+import androidx.room.Insert;
+import androidx.room.Query;
 
-import com.zhmohamed.taskmaster.Project.Project;
+import com.zhmohamed.taskmaster.entities.Project;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ public interface ProjectDao {
     List<Project> getAllproject();
 
 
-    @Query("SELECT * FROM project WHERE id=:id")
+    @Query("SELECT * FROM project WHERE projectId=:id")
     Project getById(long id);
 
     @Insert
@@ -26,7 +26,7 @@ public interface ProjectDao {
     void delete(Project project);
 
     //source: https://stackoverflow.com/questions/14018394/android-sqlite-query-getting-latest-10-records
-    @Query("SELECT * FROM project order by id DESC limit 1")
+    @Query("SELECT * FROM project order by projectId DESC limit 1")
     Project getLast();
 
 }

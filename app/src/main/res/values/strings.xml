@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">TaskMaster</string>
     <string name="CreateProject">Create Project</string>
+    <string name="AddNewProject">Add New Project</string>
 </resources>
