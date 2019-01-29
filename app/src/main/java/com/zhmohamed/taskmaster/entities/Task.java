@@ -1,15 +1,12 @@
-package com.zhmohamed.taskmaster.Task;
+package com.zhmohamed.taskmaster.entities;
 
-import android.arch.persistence.room.Embedded;
-import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.ForeignKey;
-import android.arch.persistence.room.PrimaryKey;
-import android.arch.persistence.room.TypeConverters;
+import androidx.room.Embedded;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+import androidx.room.TypeConverters;
 import android.os.AsyncTask;
 
-import com.zhmohamed.taskmaster.Project.Project;
-
-import static android.arch.persistence.room.ForeignKey.CASCADE;
+import com.zhmohamed.taskmaster.Task.StatusConverter;
 
 //source:https://stackoverflow.com/questions/44498616/android-architecture-components-using-enums
 
@@ -62,7 +59,6 @@ public class Task {
     public Task(String title, String description){
         this. title = title;
         this.description = description;
-
 
     }
 

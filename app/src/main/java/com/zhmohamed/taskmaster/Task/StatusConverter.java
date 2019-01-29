@@ -1,11 +1,13 @@
 package com.zhmohamed.taskmaster.Task;
 
-import android.arch.persistence.room.TypeConverter;
+import androidx.room.TypeConverter;
 
-import static com.zhmohamed.taskmaster.Task.Task.Status.ACCEPTED;
-import static com.zhmohamed.taskmaster.Task.Task.Status.ASSIGNED;
-import static com.zhmohamed.taskmaster.Task.Task.Status.AVAILABLE;
-import static com.zhmohamed.taskmaster.Task.Task.Status.FINISHED;
+import com.zhmohamed.taskmaster.entities.Task;
+
+import static com.zhmohamed.taskmaster.entities.Task.Status.ACCEPTED;
+import static com.zhmohamed.taskmaster.entities.Task.Status.ASSIGNED;
+import static com.zhmohamed.taskmaster.entities.Task.Status.AVAILABLE;
+import static com.zhmohamed.taskmaster.entities.Task.Status.FINISHED;
 
 public class StatusConverter {
     @TypeConverter
