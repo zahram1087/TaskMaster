@@ -1,5 +1,6 @@
 package com.zhmohamed.taskmaster;
 
+import androidx.annotation.Nullable;
 import androidx.room.Room;
 import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,14 +11,13 @@ import com.zhmohamed.taskmaster.Adapters.ProjectAdapter;
 import com.zhmohamed.taskmaster.database.ProjectDataBase;
 import com.zhmohamed.taskmaster.entities.Project;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import androidx.room.Room;
-import androidx.room.RoomDatabase;
+
 
 
 public class MainActivity extends AppCompatActivity {
@@ -26,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.Adapter projectAdapter;
     private RecyclerView.LayoutManager projectLayoutManager;
     private List<String> projectStrings;
-
+    private List<Project> projects;
+    ProjectDataBase db;
 
 
 
@@ -36,18 +37,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ProjectDataBase db = Room.databaseBuilder(getApplicationContext(), ProjectDataBase.class, "projects").build();
+        db = Room.databaseBuilder(getApplicationContext(), ProjectDataBase.class, "projects").build();
 
-
-
-        List<Project> projects = db.getProjectDao().getAllproject();
-        projectStrings = new ArrayList<>();
-        for (Project project : projects) {
-            projectStrings.add(project.toString());
-
-        }
-
-
+        projects = db.getProjectDao().getAllproject();
 
         projectList = findViewById(R.id.project_recycler_view);
 
@@ -59,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         projectList.setLayoutManager(projectLayoutManager);
 
         // the adapter for the recycler view
-        projectAdapter = new ProjectAdapter(projectStrings);
+        projectAdapter = new ProjectAdapter(projects);
         projectList.setAdapter(projectAdapter);
 
     }
@@ -67,10 +59,19 @@ public class MainActivity extends AppCompatActivity {
 
     //FUNCTIONALITY TO GO TO OTHER ACTIVITIES:
 
-    public void goToProject (View view){
+    public void goToProject(View view){
 
         Intent projectIntent = new Intent(this, ProjectActivity.class);
-        startActivity(projectIntent);
+        startActivityForResult(projectIntent,1997);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+
+        projects = db.getProjectDao().getAllproject();
+        projectAdapter.notifyDataSetChanged();
+//        projectAdapter.updateAdapterData(projects);
+
     }
 
 }
