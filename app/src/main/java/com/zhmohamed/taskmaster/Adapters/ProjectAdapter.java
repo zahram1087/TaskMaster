@@ -13,10 +13,9 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.zhmohamed.taskmaster.ProjectActivity;
 import com.zhmohamed.taskmaster.ProjectViewActivity;
 import com.zhmohamed.taskmaster.R;
-import com.zhmohamed.taskmaster.entities.Project;
+import com.zhmohamed.taskmaster.models.Project;
 
 import java.util.List;
 

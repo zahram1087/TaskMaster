@@ -6,7 +6,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.zhmohamed.taskmaster.R;
-import com.zhmohamed.taskmaster.entities.Task;
+import com.zhmohamed.taskmaster.models.Task;
 
 import java.util.List;
 

@@ -8,8 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.zhmohamed.taskmaster.Adapters.ProjectAdapter;
-import com.zhmohamed.taskmaster.database.ProjectDataBase;
-import com.zhmohamed.taskmaster.entities.Project;
+import com.zhmohamed.taskmaster.models.Project;
 
 
 import java.util.List;
@@ -22,12 +21,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private RecyclerView projectList;
+    private RecyclerView recyclerView;
     private RecyclerView.Adapter projectAdapter;
     private RecyclerView.LayoutManager projectLayoutManager;
     private List<String> projectStrings;
     private List<Project> projects;
-    ProjectDataBase db;
+
+    private static final int RC_SIGN_IN = 482;
 
 
 
@@ -37,31 +37,32 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        db = Room.databaseBuilder(getApplicationContext(), ProjectDataBase.class, "projects").build();
-
-        projects = db.getProjectDao().getAllproject();
-
-        projectList = findViewById(R.id.project_recycler_view);
-
-        // recycler view won't resize for content
-        projectList.setHasFixedSize(true);
-
-        // linear layout manager
-        projectLayoutManager = new LinearLayoutManager(this);
-        projectList.setLayoutManager(projectLayoutManager);
-
-        // the adapter for the recycler view
-        projectAdapter = new ProjectAdapter(projects);
-        projectList.setAdapter(projectAdapter);
+        renderRecyclerView();
 
     }
 
+
+    @Override
+    protected void onRestart() {
+        renderRecyclerView();
+        super.onRestart();
+    }
+
+    public void renderRecyclerView(){
+
+        recyclerView = (RecyclerView) findViewById(R.id.project_recycler_view);
+        recyclerView.setHasFixedSize(true);
+
+        // use a linear layout manager
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+    }
 
     //FUNCTIONALITY TO GO TO OTHER ACTIVITIES:
 
     public void goToProject(View view){
 
-        Intent projectIntent = new Intent(this, ProjectActivity.class);
+        Intent projectIntent = new Intent(this, AddProjectActivity.class);
         startActivityForResult(projectIntent,1997);
     }
 

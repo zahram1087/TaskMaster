@@ -11,10 +11,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.zhmohamed.taskmaster.Adapters.TaskAdapter;
-import com.zhmohamed.taskmaster.database.ProjectDataBase;
-import com.zhmohamed.taskmaster.database.TaskDataBase;
-import com.zhmohamed.taskmaster.entities.Project;
-import com.zhmohamed.taskmaster.entities.Task;
+import com.zhmohamed.taskmaster.models.Project;
+import com.zhmohamed.taskmaster.models.Task;
 
 import java.util.List;
 
