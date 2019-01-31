@@ -1,4 +1,4 @@
-package com.zhmohamed.taskmaster.entities;
+package com.zhmohamed.taskmaster.models;
 
 import androidx.annotation.NonNull;
 import androidx.room.Entity;

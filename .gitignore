@@ -205,5 +205,10 @@ Temporary Items
 # IDE
 .vscode
 
+# google service json
+
+google-services.json
+
+
 # End of https://www.gitignore.io/api/java,macos,android,androidstudio
 
