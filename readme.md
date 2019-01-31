@@ -19,3 +19,33 @@
 * Any iconography in your app should be well-labeled with a contentDescription.
 * Use the hint attribute on all editable elements in your app, or labelFor to allow a TextView to serve as a label.
 * Use the focusable attribute to show that a particular ViewGroup consists of one piece of data.
+
+
+ #### Collaborators:
+  
+  Dave 
+  Jessica 
+  Evan
+  
+# Change Log
+
+Date: 1/31/19:
+
+* Time: 10:00AM
+* Description: able to have UI that added project and created firbase DB
+
+# screenshots of App Features:
+
+### Screenshots
+* Home:
+
+<p float="left">
+  <img src="../assets/Home.png" width="150" />
+</p>
+
+* Createa Project:
+
+<p float="left">
+  <img src="../assets/createproject.png" width="150" />
+</p>
+
