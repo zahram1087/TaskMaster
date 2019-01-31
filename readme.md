@@ -40,12 +40,18 @@ Date: 1/31/19:
 * Home:
 
 <p float="left">
-  <img src="../assets/Home.png" width="150" />
+  <img src="../assets/home.png" width="150" />
 </p>
 
 * Createa Project:
 
 <p float="left">
   <img src="../assets/createproject.png" width="150" />
+</p>
+
+* Login View:
+
+<p float="left">
+  <img src="../assets/login.png" width="150" />
 </p>
 
