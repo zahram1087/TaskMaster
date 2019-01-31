@@ -34,4 +34,8 @@ public class Project {
         return this.description;
     }
 
+    public long getId(){
+        return this.id;
+    }
+
 }

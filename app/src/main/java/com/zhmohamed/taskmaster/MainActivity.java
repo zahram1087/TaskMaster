@@ -19,6 +19,8 @@ import com.zhmohamed.taskmaster.models.Project;
 import java.util.Arrays;
 import java.util.List;
 
+import android.view.View;
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
